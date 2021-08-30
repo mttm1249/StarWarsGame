@@ -137,8 +137,8 @@ class PlayerPlane: SKSpriteNode {
             array = forwardTextureArrayAnimation
         }
         
-        let forwardAction = SKAction.animate(with: array, timePerFrame: 0.05, resize: true, restore: false)
-        let backwardAction = SKAction.animate(with: array.reversed(), timePerFrame: 0.05, resize: true, restore: false)
+        let forwardAction = SKAction.animate(with: array, timePerFrame: 0.03, resize: true, restore: false)
+        let backwardAction = SKAction.animate(with: array.reversed(), timePerFrame: 0.03, resize: true, restore: false)
         
         let sequenceAction = SKAction.sequence([forwardAction, backwardAction])
         self.run(sequenceAction) { [unowned self] in

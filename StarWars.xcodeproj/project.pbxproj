@@ -13,6 +13,8 @@
 		DA514F2326DC1A4D006AAC33 /* PlayerPlane.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA514F2226DC1A4D006AAC33 /* PlayerPlane.swift */; };
 		DA514F2526DC1B02006AAC33 /* PlayerPlane.atlas in Resources */ = {isa = PBXBuildFile; fileRef = DA514F2426DC1B02006AAC33 /* PlayerPlane.atlas */; };
 		DA514F2726DCB93D006AAC33 /* Protocol GameBackgroundSpriteable + Extesion.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA514F2626DCB93D006AAC33 /* Protocol GameBackgroundSpriteable + Extesion.swift */; };
+		DA514F2926DD0BE2006AAC33 /* GreenPowerUp.atlas in Resources */ = {isa = PBXBuildFile; fileRef = DA514F2826DD0BE2006AAC33 /* GreenPowerUp.atlas */; };
+		DA514F2B26DD0C52006AAC33 /* PowerUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA514F2A26DD0C52006AAC33 /* PowerUp.swift */; };
 		DA5AF7FD26D654BF009BC50D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA5AF7FC26D654BF009BC50D /* AppDelegate.swift */; };
 		DA5AF80326D654BF009BC50D /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA5AF80226D654BF009BC50D /* GameScene.swift */; };
 		DA5AF80526D654BF009BC50D /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA5AF80426D654BF009BC50D /* GameViewController.swift */; };
@@ -27,6 +29,8 @@
 		DA514F2226DC1A4D006AAC33 /* PlayerPlane.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerPlane.swift; sourceTree = "<group>"; };
 		DA514F2426DC1B02006AAC33 /* PlayerPlane.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = PlayerPlane.atlas; sourceTree = "<group>"; };
 		DA514F2626DCB93D006AAC33 /* Protocol GameBackgroundSpriteable + Extesion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Protocol GameBackgroundSpriteable + Extesion.swift"; sourceTree = "<group>"; };
+		DA514F2826DD0BE2006AAC33 /* GreenPowerUp.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = GreenPowerUp.atlas; sourceTree = "<group>"; };
+		DA514F2A26DD0C52006AAC33 /* PowerUp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PowerUp.swift; sourceTree = "<group>"; };
 		DA5AF7F926D654BF009BC50D /* StarWars.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StarWars.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA5AF7FC26D654BF009BC50D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DA5AF80226D654BF009BC50D /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
@@ -69,6 +73,7 @@
 				DA5AF7FC26D654BF009BC50D /* AppDelegate.swift */,
 				DA5AF80226D654BF009BC50D /* GameScene.swift */,
 				DA514F1E26DACE09006AAC33 /* Island.swift */,
+				DA514F2A26DD0C52006AAC33 /* PowerUp.swift */,
 				DA514F2026DBFE38006AAC33 /* Cloud.swift */,
 				DA514F2626DCB93D006AAC33 /* Protocol GameBackgroundSpriteable + Extesion.swift */,
 				DA514F2226DC1A4D006AAC33 /* PlayerPlane.swift */,
@@ -78,6 +83,7 @@
 				DA5AF80926D654C0009BC50D /* Assets.xcassets */,
 				DA5AF80B26D654C0009BC50D /* Info.plist */,
 				DA514F2426DC1B02006AAC33 /* PlayerPlane.atlas */,
+				DA514F2826DD0BE2006AAC33 /* GreenPowerUp.atlas */,
 			);
 			path = StarWars;
 			sourceTree = "<group>";
@@ -139,6 +145,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DA514F2926DD0BE2006AAC33 /* GreenPowerUp.atlas in Resources */,
 				DA514F2526DC1B02006AAC33 /* PlayerPlane.atlas in Resources */,
 				DA5AF80826D654BF009BC50D /* Main.storyboard in Resources */,
 				DA5AF80A26D654C0009BC50D /* Assets.xcassets in Resources */,
@@ -159,6 +166,7 @@
 				DA5AF7FD26D654BF009BC50D /* AppDelegate.swift in Sources */,
 				DA514F1F26DACE09006AAC33 /* Island.swift in Sources */,
 				DA514F2726DCB93D006AAC33 /* Protocol GameBackgroundSpriteable + Extesion.swift in Sources */,
+				DA514F2B26DD0C52006AAC33 /* PowerUp.swift in Sources */,
 				DA514F1D26D973D6006AAC33 /* Background.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
