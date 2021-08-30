@@ -10,22 +10,18 @@ import GameplayKit
 
 
 
-
-protocol GameBackgroundSpriteable {
-    static func populateSprite(at point: CGPoint) -> Self
-}
-
-
 final class Cloud: SKSpriteNode, GameBackgroundSpriteable {
     
-    static func populateSprite(at point: CGPoint) -> Cloud {
+    static func populate(at point: CGPoint?) -> Cloud {
         
         let cloudImageName = configureName()
         let cloud = Cloud(imageNamed: cloudImageName)
         cloud.setScale(randomScaleFactor)
-        cloud.position = point
+        cloud.position = point ?? randomPoint()
         cloud.zPosition = 10
-        cloud.run(move(from: point))
+        cloud.name = "backgroundSprite"
+        cloud.anchorPoint = CGPoint(x: 0.5, y: 1.0)
+        cloud.run(move(from: cloud.position))
         
         return cloud
         
@@ -44,7 +40,7 @@ final class Cloud: SKSpriteNode, GameBackgroundSpriteable {
     
     fileprivate static var randomScaleFactor: CGFloat {
         
-        let distribution = GKRandomDistribution(lowestValue: 5, highestValue: 15)
+        let distribution = GKRandomDistribution(lowestValue: 5, highestValue: 25)
         let randomNumber = CGFloat(distribution.nextInt()) / 10
         
         return randomNumber
@@ -55,7 +51,7 @@ final class Cloud: SKSpriteNode, GameBackgroundSpriteable {
         
         let movePoint = CGPoint(x: point.x, y: -200)
         let moveDistance = point.y + 200
-        let movementSpeed: CGFloat = 15.0
+        let movementSpeed: CGFloat = 150
         let duration = moveDistance / movementSpeed
         return SKAction.move(to: movePoint, duration: TimeInterval(duration))
         
@@ -63,3 +59,4 @@ final class Cloud: SKSpriteNode, GameBackgroundSpriteable {
     
     
 }
+
