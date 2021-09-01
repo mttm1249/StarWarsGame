@@ -17,6 +17,7 @@
 		DA514F2B26DD0C52006AAC33 /* PowerUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA514F2A26DD0C52006AAC33 /* PowerUp.swift */; };
 		DA514F2D26DE3B5E006AAC33 /* Enemy_1.atlas in Resources */ = {isa = PBXBuildFile; fileRef = DA514F2C26DE3B5E006AAC33 /* Enemy_1.atlas */; };
 		DA514F2F26DE41AB006AAC33 /* Enemy.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA514F2E26DE41AB006AAC33 /* Enemy.swift */; };
+		DA514F3126DF7514006AAC33 /* Enemy_2.atlas in Resources */ = {isa = PBXBuildFile; fileRef = DA514F3026DF7514006AAC33 /* Enemy_2.atlas */; };
 		DA5AF7FD26D654BF009BC50D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA5AF7FC26D654BF009BC50D /* AppDelegate.swift */; };
 		DA5AF80326D654BF009BC50D /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA5AF80226D654BF009BC50D /* GameScene.swift */; };
 		DA5AF80526D654BF009BC50D /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA5AF80426D654BF009BC50D /* GameViewController.swift */; };
@@ -35,6 +36,7 @@
 		DA514F2A26DD0C52006AAC33 /* PowerUp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PowerUp.swift; sourceTree = "<group>"; };
 		DA514F2C26DE3B5E006AAC33 /* Enemy_1.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = Enemy_1.atlas; sourceTree = "<group>"; };
 		DA514F2E26DE41AB006AAC33 /* Enemy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enemy.swift; sourceTree = "<group>"; };
+		DA514F3026DF7514006AAC33 /* Enemy_2.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = Enemy_2.atlas; sourceTree = "<group>"; };
 		DA5AF7F926D654BF009BC50D /* StarWars.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StarWars.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA5AF7FC26D654BF009BC50D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DA5AF80226D654BF009BC50D /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
@@ -90,6 +92,7 @@
 				DA514F2426DC1B02006AAC33 /* PlayerPlane.atlas */,
 				DA514F2826DD0BE2006AAC33 /* GreenPowerUp.atlas */,
 				DA514F2C26DE3B5E006AAC33 /* Enemy_1.atlas */,
+				DA514F3026DF7514006AAC33 /* Enemy_2.atlas */,
 			);
 			path = StarWars;
 			sourceTree = "<group>";
@@ -154,6 +157,7 @@
 				DA514F2926DD0BE2006AAC33 /* GreenPowerUp.atlas in Resources */,
 				DA514F2526DC1B02006AAC33 /* PlayerPlane.atlas in Resources */,
 				DA5AF80826D654BF009BC50D /* Main.storyboard in Resources */,
+				DA514F3126DF7514006AAC33 /* Enemy_2.atlas in Resources */,
 				DA5AF80A26D654C0009BC50D /* Assets.xcassets in Resources */,
 				DA514F2D26DE3B5E006AAC33 /* Enemy_1.atlas in Resources */,
 			);
