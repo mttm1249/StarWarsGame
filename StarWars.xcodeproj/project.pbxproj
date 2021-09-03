@@ -29,6 +29,7 @@
 		DA5AF80526D654BF009BC50D /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA5AF80426D654BF009BC50D /* GameViewController.swift */; };
 		DA5AF80826D654BF009BC50D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DA5AF80626D654BF009BC50D /* Main.storyboard */; };
 		DA5AF80A26D654C0009BC50D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DA5AF80926D654C0009BC50D /* Assets.xcassets */; };
+		DA5EFC7A26E1FBE900F9BFE3 /* Assets.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA5EFC7926E1FBE900F9BFE3 /* Assets.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -56,6 +57,7 @@
 		DA5AF80426D654BF009BC50D /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
 		DA5AF80726D654BF009BC50D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		DA5AF80926D654C0009BC50D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		DA5EFC7926E1FBE900F9BFE3 /* Assets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Assets.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +105,7 @@
 			children = (
 				DA5AF7FC26D654BF009BC50D /* AppDelegate.swift */,
 				DA5AF80226D654BF009BC50D /* GameScene.swift */,
+				DA5EFC7926E1FBE900F9BFE3 /* Assets.swift */,
 				DA0CEBAD26E0B104003B1C2A /* YellowAmmo.swift */,
 				DA514F2E26DE41AB006AAC33 /* Enemy.swift */,
 				DA514F1E26DACE09006AAC33 /* Island.swift */,
@@ -206,6 +209,7 @@
 				DA5AF7FD26D654BF009BC50D /* AppDelegate.swift in Sources */,
 				DA514F1F26DACE09006AAC33 /* Island.swift in Sources */,
 				DA514F2F26DE41AB006AAC33 /* Enemy.swift in Sources */,
+				DA5EFC7A26E1FBE900F9BFE3 /* Assets.swift in Sources */,
 				DA514F3826DFAC08006AAC33 /* GreenPowerUp.swift in Sources */,
 				DA514F2726DCB93D006AAC33 /* Protocol GameBackgroundSpriteable + Extesion.swift in Sources */,
 				DA514F2B26DD0C52006AAC33 /* PowerUp.swift in Sources */,
