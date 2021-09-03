@@ -10,7 +10,7 @@ import GameplayKit
 
 
 class GameScene: SKScene {
-
+    
     var player: PlayerPlane!
     
     override func didMove(to view: SKView) {
@@ -40,7 +40,7 @@ class GameScene: SKScene {
             powerUp.position = CGPoint(x: CGFloat(randomPositionX), y: self.size.height + 100)
             powerUp.startMovement()
             self.addChild(powerUp)
-
+            
         }
         let randomTimeSpawn = Double(arc4random_uniform(11) + 10)
         let waitAction = SKAction.wait(forDuration: randomTimeSpawn)
@@ -163,7 +163,16 @@ class GameScene: SKScene {
 extension GameScene: SKPhysicsContactDelegate {
     
     func didBegin(_ contact: SKPhysicsContact) {
-        print("contact detected")
+   
+        let contactCategory: BitMaskCategory = [contact.bodyA.category, contact.bodyB.category]
+        
+        switch contactCategory {
+        case [.enemy, .player]: print("enemy vs player")
+        case [.powerUp, .player]: print("powerUp vs player")
+        case [.enemy, .shot]: print("enemy vs shot")
+        default:   preconditionFailure("Unable to detect collision category")
+        
+        }
     }
     
     
