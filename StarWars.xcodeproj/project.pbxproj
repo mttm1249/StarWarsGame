@@ -30,6 +30,7 @@
 		DA5AF80826D654BF009BC50D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DA5AF80626D654BF009BC50D /* Main.storyboard */; };
 		DA5AF80A26D654C0009BC50D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DA5AF80926D654C0009BC50D /* Assets.xcassets */; };
 		DA5EFC7A26E1FBE900F9BFE3 /* Assets.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA5EFC7926E1FBE900F9BFE3 /* Assets.swift */; };
+		DA5EFC7C26E2006500F9BFE3 /* MenuScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA5EFC7B26E2006500F9BFE3 /* MenuScene.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -58,6 +59,7 @@
 		DA5AF80726D654BF009BC50D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		DA5AF80926D654C0009BC50D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DA5EFC7926E1FBE900F9BFE3 /* Assets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Assets.swift; sourceTree = "<group>"; };
+		DA5EFC7B26E2006500F9BFE3 /* MenuScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuScene.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,6 +121,7 @@
 				DA514F1C26D973D6006AAC33 /* Background.swift */,
 				DA5AF80426D654BF009BC50D /* GameViewController.swift */,
 				DA5AF80626D654BF009BC50D /* Main.storyboard */,
+				DA5EFC7B26E2006500F9BFE3 /* MenuScene.swift */,
 				DA5AF80926D654C0009BC50D /* Assets.xcassets */,
 				DA0CEBAA26E0AEF7003B1C2A /* Atlases */,
 				DA514F3326DF8F6A006AAC33 /* Info.plist */,
@@ -214,6 +217,7 @@
 				DA514F2726DCB93D006AAC33 /* Protocol GameBackgroundSpriteable + Extesion.swift in Sources */,
 				DA514F2B26DD0C52006AAC33 /* PowerUp.swift in Sources */,
 				DA0CEBAC26E0AF18003B1C2A /* Shot.swift in Sources */,
+				DA5EFC7C26E2006500F9BFE3 /* MenuScene.swift in Sources */,
 				DA514F1D26D973D6006AAC33 /* Background.swift in Sources */,
 				DA0CEBAE26E0B104003B1C2A /* YellowAmmo.swift in Sources */,
 			);
