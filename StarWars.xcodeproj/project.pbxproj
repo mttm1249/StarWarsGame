@@ -32,6 +32,7 @@
 		DA5EFC7A26E1FBE900F9BFE3 /* Assets.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA5EFC7926E1FBE900F9BFE3 /* Assets.swift */; };
 		DA5EFC7C26E2006500F9BFE3 /* MenuScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA5EFC7B26E2006500F9BFE3 /* MenuScene.swift */; };
 		DA5EFC7E26E203F200F9BFE3 /* BitMaskCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA5EFC7D26E203F200F9BFE3 /* BitMaskCategory.swift */; };
+		DA5EFC8026E4DB0400F9BFE3 /* HUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA5EFC7F26E4DB0400F9BFE3 /* HUD.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -62,6 +63,7 @@
 		DA5EFC7926E1FBE900F9BFE3 /* Assets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Assets.swift; sourceTree = "<group>"; };
 		DA5EFC7B26E2006500F9BFE3 /* MenuScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuScene.swift; sourceTree = "<group>"; };
 		DA5EFC7D26E203F200F9BFE3 /* BitMaskCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BitMaskCategory.swift; sourceTree = "<group>"; };
+		DA5EFC7F26E4DB0400F9BFE3 /* HUD.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HUD.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,9 +109,48 @@
 		DA5AF7FB26D654BF009BC50D /* StarWars */ = {
 			isa = PBXGroup;
 			children = (
+				DA5EFC8626E4E28D00F9BFE3 /* Scenes */,
+				DA5EFC8426E4E26800F9BFE3 /* Classes */,
+				DA5EFC8526E4E27B00F9BFE3 /* Managers */,
+				DA5EFC8326E4E22100F9BFE3 /* Protocols + Extensions */,
+				DA5EFC8226E4E20900F9BFE3 /* Controllers */,
+				DA5EFC8126E4E1FD00F9BFE3 /* Supporting files */,
+				DA0CEBAA26E0AEF7003B1C2A /* Atlases */,
+			);
+			path = StarWars;
+			sourceTree = "<group>";
+		};
+		DA5EFC8126E4E1FD00F9BFE3 /* Supporting files */ = {
+			isa = PBXGroup;
+			children = (
 				DA5AF7FC26D654BF009BC50D /* AppDelegate.swift */,
-				DA5AF80226D654BF009BC50D /* GameScene.swift */,
-				DA5EFC7926E1FBE900F9BFE3 /* Assets.swift */,
+				DA5AF80626D654BF009BC50D /* Main.storyboard */,
+				DA5AF80926D654C0009BC50D /* Assets.xcassets */,
+				DA514F3326DF8F6A006AAC33 /* Info.plist */,
+			);
+			path = "Supporting files";
+			sourceTree = "<group>";
+		};
+		DA5EFC8226E4E20900F9BFE3 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				DA5AF80426D654BF009BC50D /* GameViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		DA5EFC8326E4E22100F9BFE3 /* Protocols + Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				DA514F2626DCB93D006AAC33 /* Protocol GameBackgroundSpriteable + Extesion.swift */,
+			);
+			path = "Protocols + Extensions";
+			sourceTree = "<group>";
+		};
+		DA5EFC8426E4E26800F9BFE3 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				DA5EFC7F26E4DB0400F9BFE3 /* HUD.swift */,
 				DA0CEBAD26E0B104003B1C2A /* YellowAmmo.swift */,
 				DA514F2E26DE41AB006AAC33 /* Enemy.swift */,
 				DA514F1E26DACE09006AAC33 /* Island.swift */,
@@ -118,18 +159,28 @@
 				DA514F3526DFABFF006AAC33 /* BluePowerUp.swift */,
 				DA514F3726DFAC08006AAC33 /* GreenPowerUp.swift */,
 				DA514F2026DBFE38006AAC33 /* Cloud.swift */,
-				DA514F2626DCB93D006AAC33 /* Protocol GameBackgroundSpriteable + Extesion.swift */,
 				DA514F2226DC1A4D006AAC33 /* PlayerPlane.swift */,
 				DA514F1C26D973D6006AAC33 /* Background.swift */,
-				DA5AF80426D654BF009BC50D /* GameViewController.swift */,
-				DA5AF80626D654BF009BC50D /* Main.storyboard */,
-				DA5EFC7B26E2006500F9BFE3 /* MenuScene.swift */,
-				DA5EFC7D26E203F200F9BFE3 /* BitMaskCategory.swift */,
-				DA5AF80926D654C0009BC50D /* Assets.xcassets */,
-				DA0CEBAA26E0AEF7003B1C2A /* Atlases */,
-				DA514F3326DF8F6A006AAC33 /* Info.plist */,
 			);
-			path = StarWars;
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		DA5EFC8526E4E27B00F9BFE3 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				DA5EFC7926E1FBE900F9BFE3 /* Assets.swift */,
+				DA5EFC7D26E203F200F9BFE3 /* BitMaskCategory.swift */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
+		DA5EFC8626E4E28D00F9BFE3 /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				DA5AF80226D654BF009BC50D /* GameScene.swift */,
+				DA5EFC7B26E2006500F9BFE3 /* MenuScene.swift */,
+			);
+			path = Scenes;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -222,6 +273,7 @@
 				DA0CEBAC26E0AF18003B1C2A /* Shot.swift in Sources */,
 				DA5EFC7E26E203F200F9BFE3 /* BitMaskCategory.swift in Sources */,
 				DA5EFC7C26E2006500F9BFE3 /* MenuScene.swift in Sources */,
+				DA5EFC8026E4DB0400F9BFE3 /* HUD.swift in Sources */,
 				DA514F1D26D973D6006AAC33 /* Background.swift in Sources */,
 				DA0CEBAE26E0B104003B1C2A /* YellowAmmo.swift in Sources */,
 			);
@@ -364,7 +416,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = KG89CXC5J4;
-				INFOPLIST_FILE = StarWars/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/StarWars/Supporting files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -372,7 +424,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = mttm1249.StarWars;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -383,7 +435,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = KG89CXC5J4;
-				INFOPLIST_FILE = StarWars/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/StarWars/Supporting files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -391,7 +443,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = mttm1249.StarWars;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};

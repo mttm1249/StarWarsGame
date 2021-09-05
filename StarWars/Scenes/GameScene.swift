@@ -10,11 +10,14 @@ import GameplayKit
 
 
 class GameScene: SKScene {
+
+    fileprivate var player: PlayerPlane!
+    fileprivate let hud = HUD()
+    fileprivate let screenSize = UIScreen.main.bounds.size
+
     
-    var player: PlayerPlane!
     
     override func didMove(to view: SKView) {
-        
         
         physicsWorld.contactDelegate = self
         physicsWorld.gravity = CGVector.zero
@@ -22,17 +25,20 @@ class GameScene: SKScene {
         configureStartScene()
         spawnClouds()
         spawnIslands()
-        let deadline = DispatchTime.now() + .nanoseconds(1)
-        DispatchQueue.main.asyncAfter(deadline: deadline) { [unowned self] in
-            self.player.performFly()
-        }
-        
+        self.player.performFly()
         spawnPowerUp()
         spawnEnemies()
+        createHUD()
+    }
+    
+    fileprivate func createHUD() {
+        addChild(hud)
+        hud.configureUI(screenSize: screenSize)
     }
     
     fileprivate func spawnPowerUp() {
-        let spawnActon = SKAction.run {
+
+        let spawnAction = SKAction.run {
             let randomNumber = Int(arc4random_uniform(2))
             let powerUp = randomNumber == 1 ? BluePowerUp() : GreenPowerUp()
             let randomPositionX = arc4random_uniform(UInt32(self.size.width - 30))
@@ -40,14 +46,13 @@ class GameScene: SKScene {
             powerUp.position = CGPoint(x: CGFloat(randomPositionX), y: self.size.height + 100)
             powerUp.startMovement()
             self.addChild(powerUp)
-            
         }
+        
         let randomTimeSpawn = Double(arc4random_uniform(11) + 10)
         let waitAction = SKAction.wait(forDuration: randomTimeSpawn)
         
-        self.run(SKAction.repeatForever(SKAction.sequence([spawnActon, waitAction])))
+        self.run(SKAction.repeatForever(SKAction.sequence([spawnAction, waitAction])))
     }
-    
     
     fileprivate func spawnEnemies() {
         let waitAction = SKAction.wait(forDuration: 3.0)
@@ -58,10 +63,9 @@ class GameScene: SKScene {
         self.run(SKAction.repeatForever(SKAction.sequence([waitAction, spawnSpiralAction])))
     }
     
-    
     fileprivate func spawnSpiralOfEnemies() {
-        let enemyTextureAtlas1 = Assets.shared.enemy_1Atlas
-        let enemyTextureAtlas2 = Assets.shared.enemy_2Atlas
+        let enemyTextureAtlas1 = Assets.shared.enemy_1Atlas//SKTextureAtlas(named: "Enemy_1")
+        let enemyTextureAtlas2 = Assets.shared.enemy_2Atlas//SKTextureAtlas(named: "Enemy_2")
         SKTextureAtlas.preloadTextureAtlases([enemyTextureAtlas1, enemyTextureAtlas2]) { [unowned self] in
             
             let randomNumber = Int(arc4random_uniform(2))
@@ -128,7 +132,6 @@ class GameScene: SKScene {
     
     override func didSimulatePhysics() {
         
-        
         player.checkPosition()
         
         enumerateChildNodes(withName: "sprite") { (node, stop) in
@@ -144,9 +147,7 @@ class GameScene: SKScene {
         }
     }
     
-    
     fileprivate func playerFire() {
-        
         let shot = YellowAmmo()
         shot.position = self.player.position
         shot.startMovement()
@@ -159,25 +160,20 @@ class GameScene: SKScene {
 }
 
 
-
 extension GameScene: SKPhysicsContactDelegate {
     
     func didBegin(_ contact: SKPhysicsContact) {
-   
-        let contactCategory: BitMaskCategory = [contact.bodyA.category, contact.bodyB.category]
         
+        let contactCategory: BitMaskCategory = [contact.bodyA.category, contact.bodyB.category]
         switch contactCategory {
         case [.enemy, .player]: print("enemy vs player")
         case [.powerUp, .player]: print("powerUp vs player")
         case [.enemy, .shot]: print("enemy vs shot")
-        default:   preconditionFailure("Unable to detect collision category")
-        
+        default: preconditionFailure("Unable to detect collision category")
         }
     }
-    
     
     func didEnd(_ contact: SKPhysicsContact) {
         
     }
-    
 }
