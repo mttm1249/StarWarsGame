@@ -33,6 +33,9 @@
 		DA5EFC7C26E2006500F9BFE3 /* MenuScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA5EFC7B26E2006500F9BFE3 /* MenuScene.swift */; };
 		DA5EFC7E26E203F200F9BFE3 /* BitMaskCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA5EFC7D26E203F200F9BFE3 /* BitMaskCategory.swift */; };
 		DA5EFC8026E4DB0400F9BFE3 /* HUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA5EFC7F26E4DB0400F9BFE3 /* HUD.swift */; };
+		DACAE3E526E56416009012E1 /* ButtonNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = DACAE3E426E56416009012E1 /* ButtonNode.swift */; };
+		DACAE3E726E5FEA9009012E1 /* PauseScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = DACAE3E626E5FEA9009012E1 /* PauseScene.swift */; };
+		DACAE3E926E609EF009012E1 /* SceneManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DACAE3E826E609EF009012E1 /* SceneManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -54,7 +57,7 @@
 		DA514F3326DF8F6A006AAC33 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DA514F3526DFABFF006AAC33 /* BluePowerUp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BluePowerUp.swift; sourceTree = "<group>"; };
 		DA514F3726DFAC08006AAC33 /* GreenPowerUp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GreenPowerUp.swift; sourceTree = "<group>"; };
-		DA5AF7F926D654BF009BC50D /* StarWars.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StarWars.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		DA5AF7F926D654BF009BC50D /* WarFly.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WarFly.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA5AF7FC26D654BF009BC50D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DA5AF80226D654BF009BC50D /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
 		DA5AF80426D654BF009BC50D /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
@@ -64,6 +67,9 @@
 		DA5EFC7B26E2006500F9BFE3 /* MenuScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuScene.swift; sourceTree = "<group>"; };
 		DA5EFC7D26E203F200F9BFE3 /* BitMaskCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BitMaskCategory.swift; sourceTree = "<group>"; };
 		DA5EFC7F26E4DB0400F9BFE3 /* HUD.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HUD.swift; sourceTree = "<group>"; };
+		DACAE3E426E56416009012E1 /* ButtonNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonNode.swift; sourceTree = "<group>"; };
+		DACAE3E626E5FEA9009012E1 /* PauseScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PauseScene.swift; sourceTree = "<group>"; };
+		DACAE3E826E609EF009012E1 /* SceneManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,7 +107,7 @@
 		DA5AF7FA26D654BF009BC50D /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				DA5AF7F926D654BF009BC50D /* StarWars.app */,
+				DA5AF7F926D654BF009BC50D /* WarFly.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -161,6 +167,7 @@
 				DA514F2026DBFE38006AAC33 /* Cloud.swift */,
 				DA514F2226DC1A4D006AAC33 /* PlayerPlane.swift */,
 				DA514F1C26D973D6006AAC33 /* Background.swift */,
+				DACAE3E426E56416009012E1 /* ButtonNode.swift */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -170,6 +177,7 @@
 			children = (
 				DA5EFC7926E1FBE900F9BFE3 /* Assets.swift */,
 				DA5EFC7D26E203F200F9BFE3 /* BitMaskCategory.swift */,
+				DACAE3E826E609EF009012E1 /* SceneManager.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -178,6 +186,7 @@
 			isa = PBXGroup;
 			children = (
 				DA5AF80226D654BF009BC50D /* GameScene.swift */,
+				DACAE3E626E5FEA9009012E1 /* PauseScene.swift */,
 				DA5EFC7B26E2006500F9BFE3 /* MenuScene.swift */,
 			);
 			path = Scenes;
@@ -186,9 +195,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		DA5AF7F826D654BF009BC50D /* StarWars */ = {
+		DA5AF7F826D654BF009BC50D /* WarFly */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = DA5AF80E26D654C0009BC50D /* Build configuration list for PBXNativeTarget "StarWars" */;
+			buildConfigurationList = DA5AF80E26D654C0009BC50D /* Build configuration list for PBXNativeTarget "WarFly" */;
 			buildPhases = (
 				DA5AF7F526D654BF009BC50D /* Sources */,
 				DA5AF7F626D654BF009BC50D /* Frameworks */,
@@ -198,9 +207,9 @@
 			);
 			dependencies = (
 			);
-			name = StarWars;
+			name = WarFly;
 			productName = StarWars;
-			productReference = DA5AF7F926D654BF009BC50D /* StarWars.app */;
+			productReference = DA5AF7F926D654BF009BC50D /* WarFly.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -217,7 +226,7 @@
 					};
 				};
 			};
-			buildConfigurationList = DA5AF7F426D654BF009BC50D /* Build configuration list for PBXProject "StarWars" */;
+			buildConfigurationList = DA5AF7F426D654BF009BC50D /* Build configuration list for PBXProject "WarFly" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -230,7 +239,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				DA5AF7F826D654BF009BC50D /* StarWars */,
+				DA5AF7F826D654BF009BC50D /* WarFly */,
 			);
 		};
 /* End PBXProject section */
@@ -268,14 +277,17 @@
 				DA514F2F26DE41AB006AAC33 /* Enemy.swift in Sources */,
 				DA5EFC7A26E1FBE900F9BFE3 /* Assets.swift in Sources */,
 				DA514F3826DFAC08006AAC33 /* GreenPowerUp.swift in Sources */,
+				DACAE3E926E609EF009012E1 /* SceneManager.swift in Sources */,
 				DA514F2726DCB93D006AAC33 /* Protocol GameBackgroundSpriteable + Extesion.swift in Sources */,
 				DA514F2B26DD0C52006AAC33 /* PowerUp.swift in Sources */,
 				DA0CEBAC26E0AF18003B1C2A /* Shot.swift in Sources */,
 				DA5EFC7E26E203F200F9BFE3 /* BitMaskCategory.swift in Sources */,
 				DA5EFC7C26E2006500F9BFE3 /* MenuScene.swift in Sources */,
+				DACAE3E726E5FEA9009012E1 /* PauseScene.swift in Sources */,
 				DA5EFC8026E4DB0400F9BFE3 /* HUD.swift in Sources */,
 				DA514F1D26D973D6006AAC33 /* Background.swift in Sources */,
 				DA0CEBAE26E0B104003B1C2A /* YellowAmmo.swift in Sources */,
+				DACAE3E526E56416009012E1 /* ButtonNode.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -421,7 +433,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = mttm1249.StarWars;
+				PRODUCT_BUNDLE_IDENTIFIER = mttm1249.WarFly;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -440,7 +452,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = mttm1249.StarWars;
+				PRODUCT_BUNDLE_IDENTIFIER = mttm1249.WarFly;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -450,7 +462,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		DA5AF7F426D654BF009BC50D /* Build configuration list for PBXProject "StarWars" */ = {
+		DA5AF7F426D654BF009BC50D /* Build configuration list for PBXProject "WarFly" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				DA5AF80C26D654C0009BC50D /* Debug */,
@@ -459,7 +471,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		DA5AF80E26D654C0009BC50D /* Build configuration list for PBXNativeTarget "StarWars" */ = {
+		DA5AF80E26D654C0009BC50D /* Build configuration list for PBXNativeTarget "WarFly" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				DA5AF80F26D654C0009BC50D /* Debug */,
