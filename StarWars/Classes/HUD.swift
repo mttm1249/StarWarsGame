@@ -38,7 +38,7 @@ class HUD: SKNode {
         
         let lifes = [life1, life2, life3]
         for (index, life) in lifes.enumerated() {
-            life.position = CGPoint(x: screenSize.width - CGFloat(index + 1) * (life.size.width + 3), y: 30)
+            life.position = CGPoint(x: screenSize.width - CGFloat(index + 1) * (life.size.width + 10), y: 30)
             life.zPosition = 100
             life.anchorPoint = CGPoint(x: 0.0, y: 0.0)
             addChild(life)

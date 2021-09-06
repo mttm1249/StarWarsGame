@@ -36,6 +36,9 @@
 		DACAE3E526E56416009012E1 /* ButtonNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = DACAE3E426E56416009012E1 /* ButtonNode.swift */; };
 		DACAE3E726E5FEA9009012E1 /* PauseScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = DACAE3E626E5FEA9009012E1 /* PauseScene.swift */; };
 		DACAE3E926E609EF009012E1 /* SceneManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DACAE3E826E609EF009012E1 /* SceneManager.swift */; };
+		DACAE3EB26E6137E009012E1 /* ParentScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = DACAE3EA26E6137E009012E1 /* ParentScene.swift */; };
+		DACAE3ED26E61804009012E1 /* OptionsScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = DACAE3EC26E61804009012E1 /* OptionsScene.swift */; };
+		DACAE3EF26E6203F009012E1 /* BestScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = DACAE3EE26E6203F009012E1 /* BestScene.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -70,6 +73,9 @@
 		DACAE3E426E56416009012E1 /* ButtonNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonNode.swift; sourceTree = "<group>"; };
 		DACAE3E626E5FEA9009012E1 /* PauseScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PauseScene.swift; sourceTree = "<group>"; };
 		DACAE3E826E609EF009012E1 /* SceneManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneManager.swift; sourceTree = "<group>"; };
+		DACAE3EA26E6137E009012E1 /* ParentScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParentScene.swift; sourceTree = "<group>"; };
+		DACAE3EC26E61804009012E1 /* OptionsScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionsScene.swift; sourceTree = "<group>"; };
+		DACAE3EE26E6203F009012E1 /* BestScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BestScene.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -185,8 +191,11 @@
 		DA5EFC8626E4E28D00F9BFE3 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
-				DA5AF80226D654BF009BC50D /* GameScene.swift */,
+				DACAE3EA26E6137E009012E1 /* ParentScene.swift */,
 				DACAE3E626E5FEA9009012E1 /* PauseScene.swift */,
+				DACAE3EC26E61804009012E1 /* OptionsScene.swift */,
+				DACAE3EE26E6203F009012E1 /* BestScene.swift */,
+				DA5AF80226D654BF009BC50D /* GameScene.swift */,
 				DA5EFC7B26E2006500F9BFE3 /* MenuScene.swift */,
 			);
 			path = Scenes;
@@ -281,13 +290,16 @@
 				DA514F2726DCB93D006AAC33 /* Protocol GameBackgroundSpriteable + Extesion.swift in Sources */,
 				DA514F2B26DD0C52006AAC33 /* PowerUp.swift in Sources */,
 				DA0CEBAC26E0AF18003B1C2A /* Shot.swift in Sources */,
+				DACAE3EF26E6203F009012E1 /* BestScene.swift in Sources */,
 				DA5EFC7E26E203F200F9BFE3 /* BitMaskCategory.swift in Sources */,
 				DA5EFC7C26E2006500F9BFE3 /* MenuScene.swift in Sources */,
+				DACAE3EB26E6137E009012E1 /* ParentScene.swift in Sources */,
 				DACAE3E726E5FEA9009012E1 /* PauseScene.swift in Sources */,
 				DA5EFC8026E4DB0400F9BFE3 /* HUD.swift in Sources */,
 				DA514F1D26D973D6006AAC33 /* Background.swift in Sources */,
 				DA0CEBAE26E0B104003B1C2A /* YellowAmmo.swift in Sources */,
 				DACAE3E526E56416009012E1 /* ButtonNode.swift in Sources */,
+				DACAE3ED26E61804009012E1 /* OptionsScene.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
