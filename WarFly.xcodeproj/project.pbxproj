@@ -39,6 +39,9 @@
 		DACAE3EB26E6137E009012E1 /* ParentScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = DACAE3EA26E6137E009012E1 /* ParentScene.swift */; };
 		DACAE3ED26E61804009012E1 /* OptionsScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = DACAE3EC26E61804009012E1 /* OptionsScene.swift */; };
 		DACAE3EF26E6203F009012E1 /* BestScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = DACAE3EE26E6203F009012E1 /* BestScene.swift */; };
+		DACAE3F226E62848009012E1 /* EnemyExplosion.sks in Resources */ = {isa = PBXBuildFile; fileRef = DACAE3F026E62848009012E1 /* EnemyExplosion.sks */; };
+		DACAE3F326E62848009012E1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DACAE3F126E62848009012E1 /* Assets.xcassets */; };
+		DACAE3FA26E740E0009012E1 /* GameOverScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = DACAE3F926E740E0009012E1 /* GameOverScene.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -76,6 +79,9 @@
 		DACAE3EA26E6137E009012E1 /* ParentScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParentScene.swift; sourceTree = "<group>"; };
 		DACAE3EC26E61804009012E1 /* OptionsScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionsScene.swift; sourceTree = "<group>"; };
 		DACAE3EE26E6203F009012E1 /* BestScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BestScene.swift; sourceTree = "<group>"; };
+		DACAE3F026E62848009012E1 /* EnemyExplosion.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = EnemyExplosion.sks; sourceTree = "<group>"; };
+		DACAE3F126E62848009012E1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = ../Scenes/Assets.xcassets; sourceTree = "<group>"; };
+		DACAE3F926E740E0009012E1 /* GameOverScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameOverScene.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,6 +127,7 @@
 		DA5AF7FB26D654BF009BC50D /* StarWars */ = {
 			isa = PBXGroup;
 			children = (
+				DACAE3F426E62856009012E1 /* Particles */,
 				DA5EFC8626E4E28D00F9BFE3 /* Scenes */,
 				DA5EFC8426E4E26800F9BFE3 /* Classes */,
 				DA5EFC8526E4E27B00F9BFE3 /* Managers */,
@@ -138,6 +145,7 @@
 				DA5AF7FC26D654BF009BC50D /* AppDelegate.swift */,
 				DA5AF80626D654BF009BC50D /* Main.storyboard */,
 				DA5AF80926D654C0009BC50D /* Assets.xcassets */,
+				DACAE3F126E62848009012E1 /* Assets.xcassets */,
 				DA514F3326DF8F6A006AAC33 /* Info.plist */,
 			);
 			path = "Supporting files";
@@ -196,9 +204,18 @@
 				DACAE3EC26E61804009012E1 /* OptionsScene.swift */,
 				DACAE3EE26E6203F009012E1 /* BestScene.swift */,
 				DA5AF80226D654BF009BC50D /* GameScene.swift */,
+				DACAE3F926E740E0009012E1 /* GameOverScene.swift */,
 				DA5EFC7B26E2006500F9BFE3 /* MenuScene.swift */,
 			);
 			path = Scenes;
+			sourceTree = "<group>";
+		};
+		DACAE3F426E62856009012E1 /* Particles */ = {
+			isa = PBXGroup;
+			children = (
+				DACAE3F026E62848009012E1 /* EnemyExplosion.sks */,
+			);
+			path = Particles;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -259,8 +276,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				DA514F2526DC1B02006AAC33 /* PlayerPlane.atlas in Resources */,
+				DACAE3F226E62848009012E1 /* EnemyExplosion.sks in Resources */,
 				DA0CEBA926DFFD8E003B1C2A /* YellowAmmo.atlas in Resources */,
 				DA0CEBA726DFB37F003B1C2A /* BluePowerUp.atlas in Resources */,
+				DACAE3F326E62848009012E1 /* Assets.xcassets in Resources */,
 				DA5AF80826D654BF009BC50D /* Main.storyboard in Resources */,
 				DA514F3126DF7514006AAC33 /* Enemy_2.atlas in Resources */,
 				DA5AF80A26D654C0009BC50D /* Assets.xcassets in Resources */,
@@ -286,6 +305,7 @@
 				DA514F2F26DE41AB006AAC33 /* Enemy.swift in Sources */,
 				DA5EFC7A26E1FBE900F9BFE3 /* Assets.swift in Sources */,
 				DA514F3826DFAC08006AAC33 /* GreenPowerUp.swift in Sources */,
+				DACAE3FA26E740E0009012E1 /* GameOverScene.swift in Sources */,
 				DACAE3E926E609EF009012E1 /* SceneManager.swift in Sources */,
 				DA514F2726DCB93D006AAC33 /* Protocol GameBackgroundSpriteable + Extesion.swift in Sources */,
 				DA514F2B26DD0C52006AAC33 /* PowerUp.swift in Sources */,
