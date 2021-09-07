@@ -7,10 +7,13 @@
 
 import SpriteKit
 import GameplayKit
+import AVFoundation
 
 
 class GameScene: ParentScene {
     
+    
+    var backgroundMusic: SKAudioNode!
     
     fileprivate var player: PlayerPlane!
     fileprivate let hud = HUD()
@@ -36,13 +39,19 @@ class GameScene: ParentScene {
         }
     }
     
-    
-    
     override func didMove(to view: SKView) {
-        self.scene?.isPaused = false 
         
-        // Checking if scene persists
+        gameSettings.loadGameSettings()
+        if gameSettings.isMusic && backgroundMusic == nil {
+            if let musicURL = Bundle.main.url(forResource: "backgroundMusic", withExtension: "mp3") {
+                backgroundMusic = SKAudioNode(url: musicURL)
+                addChild(backgroundMusic)
+            }
+        }
         
+        
+        self.scene?.isPaused = false
+        // checking if scene persists
         guard sceneManager.gameScene == nil else { return }
         
         sceneManager.gameScene = self
@@ -54,6 +63,7 @@ class GameScene: ParentScene {
         spawnClouds()
         spawnIslands()
         self.player.performFly()
+        
         spawnPowerUp()
         spawnEnemies()
         createHUD()
@@ -92,15 +102,16 @@ class GameScene: ParentScene {
     }
     
     fileprivate func spawnSpiralOfEnemies() {
-        let enemyTextureAtlas1 = Assets.shared.enemy_1Atlas//SKTextureAtlas(named: "Enemy_1")
-        let enemyTextureAtlas2 = Assets.shared.enemy_2Atlas//SKTextureAtlas(named: "Enemy_2")
+        let enemyTextureAtlas1 = Assets.shared.enemy_1Atlas
+        let enemyTextureAtlas2 = Assets.shared.enemy_2Atlas
         SKTextureAtlas.preloadTextureAtlases([enemyTextureAtlas1, enemyTextureAtlas2]) { [unowned self] in
             
             let randomNumber = Int(arc4random_uniform(2))
+            
             let arrayOfAtlases = [enemyTextureAtlas1, enemyTextureAtlas2]
             let textureAtlas = arrayOfAtlases[randomNumber]
             
-            let waitAction = SKAction.wait(forDuration: 1.0)
+            let waitAction = SKAction.wait(forDuration: 2.0)
             let spawnEnemy = SKAction.run({ [unowned self] in
                 let textureNames = textureAtlas.textureNames.sorted()
                 let texture = textureAtlas.textureNamed(textureNames[12])
@@ -168,6 +179,19 @@ class GameScene: ParentScene {
             }
         }
         
+        enumerateChildNodes(withName: "bluePowerUp") { (node, stop) in
+            if node.position.y <= -100 {
+                node.removeFromParent()
+            }
+        }
+        
+        enumerateChildNodes(withName: "greenPowerUp") { (node, stop) in
+            if node.position.y <= -100 {
+                node.removeFromParent()
+            }
+        }
+        
+        
         enumerateChildNodes(withName: "shotSprite") { (node, stop) in
             if node.position.y >= self.size.height + 100 {
                 node.removeFromParent()
@@ -175,7 +199,43 @@ class GameScene: ParentScene {
         }
     }
     
+    // MARK: Sounds
+    
+    func bluePowerUpSound() {
+        if gameSettings.isSound {
+            self.run(SKAction.playSoundFileNamed("powerUpEarned_2", waitForCompletion: false))
+        }
+    }
+    
+    func greenPowerUpSound() {
+        if gameSettings.isSound {
+            self.run(SKAction.playSoundFileNamed("powerUpEarned", waitForCompletion: false))
+        }
+    }
+    
+    func playerFireSound() {
+        if gameSettings.isSound {
+            self.run(SKAction.playSoundFileNamed("shotSound", waitForCompletion: false))
+        }
+    }
+    
+    func damageSound() {
+        if gameSettings.isSound {
+            self.run(SKAction.playSoundFileNamed("damageSound", waitForCompletion: false))
+        }
+    }
+    
+    
+    func hitSound() {
+        if gameSettings.isSound {
+            self.run(SKAction.playSoundFileNamed("hitSound", waitForCompletion: false))
+        }
+    }
+    
+    
+    
     fileprivate func playerFire() {
+        playerFireSound()
         let shot = YellowAmmo()
         shot.position = self.player.position
         shot.startMovement()
@@ -194,6 +254,7 @@ class GameScene: ParentScene {
             self.scene?.isPaused = true
             self.scene!.view?.presentScene(pauseScene, transition: transition)
         } else {
+            
             playerFire()
         }
     }
@@ -208,12 +269,14 @@ extension GameScene: SKPhysicsContactDelegate {
         let contactPoint = contact.contactPoint
         explosion?.position = contactPoint
         explosion?.zPosition = 25
-        let waitForWxplosionAction = SKAction.wait(forDuration: 1.0)
+        let waitForExplosionAction = SKAction.wait(forDuration: 2.0)
         
         let contactCategory: BitMaskCategory = [contact.bodyA.category, contact.bodyB.category]
         switch contactCategory {
         case [.enemy, .player]: print("enemy vs player")
             
+            
+            damageSound()
             if contact.bodyA.node?.name == "sprite" {
                 if contact.bodyA.node?.parent != nil {
                     contact.bodyA.node?.removeFromParent()
@@ -226,27 +289,65 @@ extension GameScene: SKPhysicsContactDelegate {
                 }
             }
             addChild(explosion!)
-            self.run(waitForWxplosionAction) {
-                explosion?.removeFromParent()
-            }
+            self.run(waitForExplosionAction){ explosion?.removeFromParent() }
             
             if lives == 0 {
+                
+                gameSettings.currentScore = hud.score
+                gameSettings.saveScores()
+                
                 let gameOverScene = GameOverScene(size: self.size)
                 gameOverScene.scaleMode = .aspectFill
                 let transition = SKTransition.doorsCloseVertical(withDuration: 1.0)
                 self.scene!.view?.presentScene(gameOverScene, transition: transition)
             }
-        case [.powerUp, .player]: print("powerUp vs player")
-        case [.enemy, .shot]: print("enemy vs shot")
-            hud.score += 5
             
-            contact.bodyA.node?.removeFromParent()
-            contact.bodyB.node?.removeFromParent()
-            addChild(explosion!)
-            self.run(waitForWxplosionAction) {
-                explosion?.removeFromParent()
+        case [.powerUp, .player]: print("powerUp vs player")
+            
+            if contact.bodyA.node?.parent != nil && contact.bodyB.node?.parent != nil {
+                
+                if contact.bodyA.node?.name == "bluePowerUp" {
+                    contact.bodyA.node?.removeFromParent()
+                    lives = 3
+                    bluePowerUpSound()
+                    player.bluePowerUp()
+                } else if contact.bodyB.node?.name == "bluePowerUp" {
+                    contact.bodyB.node?.removeFromParent()
+                    lives = 3
+                    bluePowerUpSound()
+                    player.bluePowerUp()
+                }
+                
+                if contact.bodyA.node?.name == "greenPowerUp" {
+                    contact.bodyA.node?.removeFromParent()
+                    if lives < 3 || lives < 2 {
+                        lives += 1
+                    }
+                    greenPowerUpSound()
+                    player.greenPowerUp()
+                } else {
+                    contact.bodyB.node?.removeFromParent()
+                    if lives < 3 || lives < 2 {
+                        lives += 1
+                    }
+                    greenPowerUpSound()
+                    player.greenPowerUp()
+                }
             }
+            
+        case [.enemy, .shot]: print("enemy vs shot")
+            
+            if contact.bodyA.node?.parent != nil && contact.bodyB.node?.parent != nil {
+                contact.bodyA.node?.removeFromParent()
+                contact.bodyB.node?.removeFromParent()
+                hitSound()
+                hud.score += 5
+                addChild(explosion!)
+                self.run(waitForExplosionAction){ explosion?.removeFromParent() }
+            }
+            
         default: preconditionFailure("Unable to detect collision category")
+            
         }
     }
     
@@ -254,3 +355,5 @@ extension GameScene: SKPhysicsContactDelegate {
         
     }
 }
+
+

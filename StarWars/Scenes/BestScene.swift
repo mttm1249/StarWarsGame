@@ -9,9 +9,12 @@ import SpriteKit
 
 class BestScene: ParentScene {
     
-    var places = [10, 100, 10000]
+    var places: [Int]!
     
     override func didMove(to view: SKView) {
+        
+        gameSettings.loadScores()
+        places = gameSettings.highScore
         
         setHeader(withName: "best", andBackground: "header_background")
         
@@ -25,13 +28,13 @@ class BestScene: ParentScene {
             addChild(button)
         }
         
-        let topPlaces = places.sorted { $0 > $1 }.prefix(3)
-        for (index, value) in topPlaces.enumerated() {
+        
+        for (index, value) in places.enumerated() {
             let l = SKLabelNode(text: value.description)
             l.fontColor = UIColor(red: 219 / 255, green: 226 / 255, blue: 215 / 255, alpha: 1.0)
             l.fontName = "AmericanTypewriter-Bold"
             l.fontSize = 30
-            l.position = CGPoint(x: self.frame.midX, y: self.frame.midY - CGFloat(index * 60))
+            l.position = CGPoint(x: self.frame.midX, y: self.frame.midY - CGFloat(index * 60) + 40)
             addChild(l)
         }
     }
@@ -39,6 +42,7 @@ class BestScene: ParentScene {
     
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        menuMoveSound()
         let location = touches.first!.location(in: self)
         let node = self.atPoint(location)
         

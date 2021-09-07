@@ -8,8 +8,18 @@
 import SpriteKit
 
 class ParentScene: SKScene {
+    
+    let gameSettings = GameSettings()
     let sceneManager = SceneManager.shared
     var backScene: SKScene?
+    
+    
+    let waterDropSoundAction = SKAction.playSoundFileNamed("WaterDrop.caf", waitForCompletion: false)
+    func menuMoveSound() {
+        if gameSettings.isSound {
+            self.run(SKAction.playSoundFileNamed("menuMoveSound", waitForCompletion: false))
+        }
+    }
     
     func setHeader(withName name: String?, andBackground backgroundName: String) {
         let header = ButtonNode(titled: name, backgroundName: backgroundName)

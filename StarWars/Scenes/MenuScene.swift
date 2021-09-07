@@ -28,6 +28,7 @@ class MenuScene: ParentScene {
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        menuMoveSound()
         let location = touches.first!.location(in: self)
         let node = self.atPoint(location)
         

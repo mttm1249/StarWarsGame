@@ -38,8 +38,8 @@ final class Island: SKSpriteNode, GameBackgroundSpriteable {
     
     fileprivate static var randomScaleFactor: CGFloat {
         
-        let distribution = GKRandomDistribution(lowestValue: 1, highestValue: 10)
-        let randomNumber = CGFloat(distribution.nextInt()) / 10
+        let distribution = GKRandomDistribution(lowestValue: 1, highestValue: 7)
+        let randomNumber = CGFloat(distribution.nextInt()) / 7
         
         return randomNumber
         

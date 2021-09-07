@@ -39,7 +39,7 @@ class Shot: SKSpriteNode {
     func startMovement() {
         performRotation()
         
-        let moveForward = SKAction.moveTo(y: screenSize.height + 100, duration: 2)
+        let moveForward = SKAction.moveTo(y: screenSize.height + 100, duration: 4)
         self.run(moveForward)
         
     }

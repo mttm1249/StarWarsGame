@@ -7,7 +7,10 @@
 
 import SpriteKit
 
+
 class Assets {
+    
+
     static let shared = Assets()
     var isLoaded = false
     let playerPlaneAtlas = SKTextureAtlas(named: "PlayerPlane")
@@ -17,6 +20,10 @@ class Assets {
     let greenPowerUpAtlas = SKTextureAtlas(named: "GreenPowerUp")
     let yellowAmmoAtlas = SKTextureAtlas(named: "YellowAmmo")
 
+
+    
+
+
     func preloadAssets() {
         playerPlaneAtlas.preload { print("playerPlane preloaded") }
         enemy_1Atlas.preload { print("enemy_1 preloaded") }
@@ -24,5 +31,15 @@ class Assets {
         bluePowerUpAtlas.preload { print("bluePowerUp preloaded") }
         greenPowerUpAtlas.preload { print("greenPowerUp preloaded") }
         yellowAmmoAtlas.preload { print("yellowAmmo preloaded") }
+        
+
     }
 }
+
+
+
+
+
+
+
+
